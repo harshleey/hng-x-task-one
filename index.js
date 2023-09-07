@@ -16,17 +16,17 @@ app.get("/api", (req, res) => {
     const currentDate = new Date();
     const options = { weekday: "long" };
     const currentDay = currentDate.toLocaleDateString("en-US", options);
+    const utcTime = currentDate.toISOString().replace(/\.\d+Z$/, "Z");
     res.json({
       slack_name: slack_name,
       current_day: currentDay,
-      utc_time: currentDate.toISOString(),
+      utc_time: utcTime,
       track: track,
       github_file_url:
         "https://github.com/harshleey/hng-x-task-one/blob/main/index.js",
       github_repo_url: "https://github.com/harshleey/hng-x-task-one",
       status_code: res.statusCode,
     });
-    console.log(res);
   } catch (error) {
     console.log(error);
   }
