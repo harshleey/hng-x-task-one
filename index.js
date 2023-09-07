@@ -22,7 +22,7 @@ app.get("/api", (req, res) => {
       utc_time: currentDate.toISOString(),
       track: track,
       github_file_url:
-        "https://github.com/harshleey/hng-x-task-one/hng-task-1/index.js",
+        "https://github.com/harshleey/hng-x-task-one/blob/index.js",
       github_repo_url: "https://github.com/harshleey/hng-x-task-one",
       status_code: res.statusCode,
     });
